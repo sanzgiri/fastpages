@@ -2,15 +2,12 @@
 title: "Home Automation with a Raspberry Pi"
 description: "Setting up Home Assistant on a Raspberry Pi 4"
 layout: post
-toc: true
+toc: false
 comments: true
-image: images/home_assistant.png
 hide: false
 search_exclude: false
 categories: [automation, iot]
 ---
-
-# Home Automation with a Raspberry Pi
 
 I had come across [Home Assistant](https://www.home-assistant.io/) a while back, and 
 finally set it up this weekend. It was pretty quick and easy.

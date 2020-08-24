@@ -1,8 +1,15 @@
-# Grab URL Screenshot
-> Grab a screenshot of web page using a "headless" chrome browser
+---
+title: "Grab URL Screenshot"
+description: "Grab URL Screenshot"
+layout: post
+toc: false
+comments: true
+hide: false
+search_exclude: false
+categories: [automation, scraping]
 
+* Grab a screenshot of web page using a "headless" chrome browser
 
-## Setup
 ```
 # Install chrome
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
@@ -47,7 +54,7 @@ get_screenshot('https://phantomjs.org/screen-capture.html', 'p2.png')
 Image(filename='p2.png')
 ```
 
-    URL screenshot for https://phantomjs.org/screen-capture.html saved to p2.png
+* URL screenshot for https://phantomjs.org/screen-capture.html saved to p2.png
 
 
 ![png](images/2020-01-29-Grab-URL-screenshot_files/output_2_1.png)

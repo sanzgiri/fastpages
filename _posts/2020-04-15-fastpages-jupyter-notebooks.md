@@ -1,12 +1,10 @@
 ---
-toc: true
+toc: false
 layout: post
 description: Creating auto-updating notebooks and blog posts with FastPages
 categories: [jupyter]
 title: Creating auto-updating notebooks and blog posts with FastPages
 ---
-
-# Creating auto-updating notebooks and blog posts with FastPages
 
 * Assumes you have a blog set up using FastPages. If not, you can quickly create one going through the steps listed [here](https://github.com/fastai/fastpages). Note that you can create multiple FastPages blogs inside your github account, each in a separate repo.
 
