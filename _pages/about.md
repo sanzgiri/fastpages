@@ -4,12 +4,12 @@ title: About Me
 permalink: /about/
 ---
 
-# Bio
+### Bio
 
-# List of Publications
+### List of Publications
 
-# Conferences Attended
+### Conferences Attended
 
-# Projects
+### Projects
 
-# What I am reading
+### What I am reading
