@@ -359,21 +359,17 @@
   
 
   
+      ,"page3": {
+          "title": "Projects",
+          "content": "",
+          "url": "https://sanzgiri.github.io/fastpages/fastpages/projects/",
+          "relUrl": "/projects/",
+          "date": ""
+      }
+      
   
 
   
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
   
 
   
@@ -382,7 +378,22 @@
   
 
   
-      ,"page12": {
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+      ,"page13": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://sanzgiri.github.io/fastpages/fastpages/robots.txt",
