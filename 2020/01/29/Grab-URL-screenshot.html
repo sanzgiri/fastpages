@@ -1,0 +1,52 @@
+<h1 id="grab-url-screenshot">Grab URL Screenshot</h1>
+<blockquote>
+  <p>Grab a screenshot of web page using a “headless” chrome browser</p>
+</blockquote>
+
+<h2 id="setup">Setup</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Install chrome
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" &gt;&gt; /etc/apt/sources.list.d/google.list'
+sudo apt-get update
+sudo apt-get install google-chrome-stable
+
+# Find version of chrome
+google-chrome --version
+
+# Find corresponding version of chromedriver from here: https://sites.google.com/a/chromium.org/chromedriver/downloads  
+# and then here:  https://chromedriver.storage.googleapis.com/index.html and download
+wget https://chromedriver.storage.googleapis.com/&lt;version&gt;/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+sudo mv chromedriver /usr/bin
+
+# Install selenium webdriver
+pip install selenium
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>  <span class="c1"># Import selenium web driver
+</span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="k">def</span> <span class="nf">get_screenshot</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">imagefile</span><span class="p">):</span>
+
+    <span class="n">chrome_options</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">ChromeOptions</span><span class="p">()</span>
+    <span class="n">chrome_options</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">'--headless'</span><span class="p">)</span>
+
+    <span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="s">'chromedriver'</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">chrome_options</span><span class="p">)</span>
+    
+    <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">save_screenshot</span><span class="p">(</span><span class="n">imagefile</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">res</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'URL screenshot for {url} saved to {imagefile}'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Error getting URL screenshot'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">get_screenshot</span><span class="p">(</span><span class="s">'https://phantomjs.org/screen-capture.html'</span><span class="p">,</span> <span class="s">'p2.png'</span><span class="p">)</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s">'p2.png'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>URL screenshot for https://phantomjs.org/screen-capture.html saved to p2.png
+</code></pre></div></div>
+
+<p><img src="images/2020-01-29-Grab-URL-screenshot_files/output_2_1.png" alt="png" /></p>
+
