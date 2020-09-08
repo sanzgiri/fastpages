@@ -1,1 +1,1 @@
-Sitemap: https://sanzgiri.github.io/fastpages/fastpages/sitemap.xml
+Sitemap: https://sanzgiri.com/sitemap.xml
